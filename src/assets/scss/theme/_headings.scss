@@ -1,0 +1,10 @@
+h1{
+    font-size: 28px;
+    line-height: 44px;
+    @include breakpoint(small) {
+        font-size: 38px;
+    }
+    @include breakpoint(medium) {
+        font-size: 51px;
+    }
+}

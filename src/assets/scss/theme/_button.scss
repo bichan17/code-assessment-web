@@ -1,0 +1,16 @@
+.button{
+    background-color: $color-danube;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $color-white;
+    padding: 12px 20px;
+    border-radius: 10000px;
+    cursor: pointer; 
+    &:hover{
+        background-color: $color-steel-blue;
+    }
+    &[disabled]{
+        opacity: 0.3;
+        background-color: $color-danube;
+    }
+}

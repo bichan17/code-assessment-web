@@ -1,0 +1,24 @@
+.site-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: $viewport-minimum;
+    min-height: 100vh;
+    max-width: $viewport-maximum;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.site-container--gutters {
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    @include breakpoint(small) {
+        padding-left: $gutter-small;
+        padding-right: $gutter-small;
+    }
+    @include breakpoint(medium) {
+        padding-left: $gutter-medium;
+        padding-right: $gutter-medium;
+    }
+}

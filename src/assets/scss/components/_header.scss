@@ -1,0 +1,19 @@
+.component-header{
+    display: flex;
+    margin: 30px 0 22px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid $color-alto;
+    flex-direction: column;
+    
+    @include breakpoint(small) {
+        margin: 50px 0 25px;
+        padding-bottom: 25px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    @include breakpoint(medium) {
+        margin: 50px 0 29px;
+        padding-bottom: 34px;
+    }
+}
