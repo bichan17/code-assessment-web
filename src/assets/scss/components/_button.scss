@@ -5,10 +5,12 @@
     color: $color-white;
     padding: 12px 20px;
     border-radius: 10000px;
+    cursor: pointer; 
     &:hover{
         background-color: $color-steel-blue;
     }
-    &.disabled{
+    &[disabled]{
         opacity: 0.3;
+        background-color: $color-danube;
     }
 }
