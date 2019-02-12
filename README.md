@@ -22,7 +22,7 @@ Please also update this README file: we'd love to see notes on your decision-mak
 
 ## Implementation
 
-I used react-modal for the shopping cart, as it is easy to configure and well supported. I decided to use SASS for styles as that is what I am most comfortable with. My pattern in the file structure of the styles is meant to isolate component specific styles and organize other utility classes to promote resusablity and making updates easier.
+I used [react-modal](https://www.npmjs.com/package/react-modal) for the shopping cart, as it is easy to configure and well supported. I decided to use SASS for styles as that is what I am most comfortable with. My pattern in the file structure of the styles is meant to isolate component specific styles and organize other utility classes to promote resusablity and making updates easier.
 
 ## To Do
 
