@@ -1,5 +1,7 @@
 import {
   ADD_TO_CART,
+  SUBTRACT_FROM_CART,
+  DELETE_ALL_FROM_CART,
   CHECKOUT_REQUEST,
   CHECKOUT_FAILURE
 } from '../constants/ActionTypes'
@@ -16,18 +18,37 @@ const addedIds = (state = initialState.addedIds, action) => {
         return state
       }
       return [ ...state, action.productId ]
+    case SUBTRACT_FROM_CART:
+      //disable if there is one left
+      if (quantityById[action.productId] < 2){
+        return state.filter(el => action.productId !== el)
+      }
+      return state
+    case DELETE_ALL_FROM_CART:
+      return state.filter(el => action.productId !== el)
     default:
       return state
   }
 }
 
 const quantityById = (state = initialState.quantityById, action) => {
+  const { productId } = action
   switch (action.type) {
     case ADD_TO_CART:
-      const { productId } = action
-      return { ...state,
+      return {
+        ...state,
         [productId]: (state[productId] || 0) + 1
       }
+    case SUBTRACT_FROM_CART:
+      return {
+        ...state,
+        [productId]: (state[productId] || 0) - 1
+      }
+    case DELETE_ALL_FROM_CART:
+      return{
+        ...state,
+        [productId] : 0
+    }
     default:
       return state
   }

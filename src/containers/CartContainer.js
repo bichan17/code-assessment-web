@@ -1,29 +1,33 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { checkout, openModal, closeModal } from '../actions'
+import { checkout, openModal, closeModal, addToCart, subtractFromCart, deleteAllFromCart } from '../actions'
 import { getTotal, getCartProducts } from '../reducers'
 import Cart from '../components/Cart'
 import Modal from 'react-modal';
 
 Modal.setAppElement('#root')
 
-const CartContainer = ({ products, total, checkout, modalIsOpen, openModal, closeModal  }) => (
-  <div className="cart-container">
-    <Modal
-      isOpen={modalIsOpen}
-      className="Modal"
-      overlayClassName="Overlay"
-    >
-      <Cart
-        closeModal={closeModal}
-        products={products}
-        total={total}
-        onCheckoutClicked={() => checkout(products)} />
-    </Modal>
-  </div>
-)
-
+const CartContainer = ({ products, total, checkout, modalIsOpen, closeModal, addToCart, subtractFromCart, deleteAllFromCart }) => {
+  return (
+    <div className="cart-container">
+      <Modal
+        isOpen={modalIsOpen}
+        className="Modal"
+        overlayClassName="Overlay"
+      >
+        <Cart
+          closeModal={closeModal}
+          addToCart={addToCart}
+          subtractFromCart={subtractFromCart}
+          deleteAllFromCart={deleteAllFromCart}
+          products={products}
+          total={total}
+          onCheckoutClicked={() => checkout(products)} />
+      </Modal>
+    </div>
+  )
+}
 CartContainer.propTypes = {
   products: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number.isRequired,
@@ -43,5 +47,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  { checkout, openModal, closeModal}
+  { checkout, openModal, closeModal, addToCart, subtractFromCart, deleteAllFromCart }
 )(CartContainer)

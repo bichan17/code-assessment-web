@@ -2,16 +2,50 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Product from './Product'
 
-const Cart  = ({ products, total, onCheckoutClicked, closeModal }) => {
+const Cart  = ({ products, total, onCheckoutClicked, closeModal, addToCart, subtractFromCart, deleteAllFromCart }) => {
   const hasProducts = products.length > 0
   const nodes = hasProducts ? (
     products.map(product =>
-      <Product
-        title={product.title}
-        price={product.price}
-        quantity={product.quantity}
-        key={product.id}
-      />
+      <div className="cart-product" key={product.id}>
+        <Product
+          title={product.title}
+          price={product.price}
+          quantity={product.quantity}
+          key={product.id}
+        >
+          <button onClick={() => deleteAllFromCart(product.id, product.quantity)}>Remove</button>
+        </Product>
+
+
+        <div className="cart-controls">
+          <button
+            className="button"
+            onClick={() => subtractFromCart(product.id)}
+            disabled={product.quantity - 1 === 0}
+          >
+            Decrease
+          </button>
+          <label>
+            <span className="hidden">Quantity:</span>
+            <input
+              value={product.quantity}
+              onClick={event => {
+                event.target.select()
+              }}
+              onChange={event => {
+                this.onQuantityChange(event, product.id)
+              }}
+            />
+          </label>
+          <button
+            className="button"
+            onClick={() => addToCart(product.id)}
+            disabled={product.inventory === 0}
+          >
+            Increase
+          </button>
+        </div>
+      </div>
     )
   ) : (
     <div className="no-products">

@@ -8,23 +8,9 @@
     }
     @include breakpoint(small) {
         display: flex;
-    }
-
-    .product-item-image-wrapper{
-        @include breakpoint(small) {
-            max-width: 40.71%;
-            max-height: 282px;
-        }
-    }
-
-    img{
-        max-width: 100%;
-        @include breakpoint(small) {
-            object-fit: cover;
-        }
+        margin-bottom: 28px;
     }
     .product-item-info{
-        padding: 24px;
         width: 100%;
         @include breakpoint(small) {
             display: flex;

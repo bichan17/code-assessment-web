@@ -11,5 +11,5 @@ npm start
 
 
 resize images
-
+pin add to cart button to bottom
 

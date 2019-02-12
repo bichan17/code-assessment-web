@@ -23,6 +23,20 @@ export const addToCart = productId => (dispatch, getState) => {
   }
 }
 
+const subtractFromCartUnsafe = productId => ({
+  type: types.SUBTRACT_FROM_CART,
+  productId
+})
+
+export const subtractFromCart = productId => (dispatch, getState) => {
+  dispatch(subtractFromCartUnsafe(productId))
+}
+
+export const deleteAllFromCart = (productId,inventory) => (dispatch, getState) => {
+  dispatch({type: types.DELETE_ALL_FROM_CART,productId,inventory})
+}
+
+
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState()
 

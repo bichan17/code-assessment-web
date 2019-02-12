@@ -4,14 +4,11 @@ import Product from './Product'
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
   <li className="component-product-item">
-    <div className="product-item-image-wrapper">
-      <img src={`./assets/img/${product.title}.jpg`} alt={product.title} />
-    </div>
-    <div className="product-item-info">
-      <Product
-        title={product.title}
-        price={product.price}
-        inventory={product.inventory} />
+    <Product
+      title={product.title}
+      price={product.price}
+      inventory={product.inventory} >
+    
       <div className="product-item-actions">
         <button 
           className="button"
@@ -20,7 +17,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => (
           {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
         </button>
       </div>
-    </div>
+    </Product>
   </li>
 )
 

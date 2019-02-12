@@ -1,5 +1,13 @@
 .component-product{
-    margin-bottom: 26px;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(small) {
+        flex-direction: row;
+    }
+    .product-info{
+        padding: 24px;
+        width: 100%;
+    }
     .product-description{
         display: flex;
         align-items: center;
@@ -19,5 +27,20 @@
         text-transform: uppercase;
         color: $color-gray;
         font-size: 12px;
+        margin-bottom: 26px;
+    }
+
+    .product-item-image-wrapper{
+        @include breakpoint(small) {
+            max-width: 40.71%;
+            max-height: 282px;
+        }
+    }
+
+    img{
+        max-width: 100%;
+        @include breakpoint(small) {
+            object-fit: cover;
+        }
     }
 }
