@@ -26,7 +26,7 @@ I used react-modal for the shopping cart, as it is easy to configure and well su
 
 ## To Do
 
-Hook up to Products API
-Convert SVGs to icon font
-Add Tax and Subtotal
-Error Messaging for Cart controls
+- Hook up to Products API
+- Convert SVGs to icon font
+- Add Tax and Subtotal
+- Error Messaging for Cart controls
