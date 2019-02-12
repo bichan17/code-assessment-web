@@ -7,6 +7,9 @@
     .product-info{
         padding: 24px;
         width: 100%;
+        .remove{
+            color: $color-cardinal;
+        }
     }
     .product-description{
         display: flex;

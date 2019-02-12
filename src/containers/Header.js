@@ -6,7 +6,7 @@ import { openModal } from '../actions'
 const Header = ({ products, openModal}) => (
   <div className="component-header">
     <h1>Acme Store</h1>
-    <div onClick={openModal} className="cart-img"><img src="./assets/img/cart-icon.svg" alt="cart-icon" /> {products.length ? 'View Cart': 'Your cart is empty'}</div>
+    <button onClick={openModal} className="cart-img"><img src="./assets/img/cart-icon.svg" alt="cart-icon" /> {products.length ? 'View Cart': 'Your cart is empty'}</button>
   </div>
 )
 

@@ -13,17 +13,17 @@ const Cart  = ({ products, total, onCheckoutClicked, closeModal, addToCart, subt
           quantity={product.quantity}
           key={product.id}
         >
-          <button onClick={() => deleteAllFromCart(product.id, product.quantity)}>Remove</button>
+          <button className="remove" onClick={() => deleteAllFromCart(product.id, product.quantity)}>Remove</button>
         </Product>
 
 
         <div className="cart-controls">
           <button
-            className="button"
+            className="button secondary left"
             onClick={() => subtractFromCart(product.id)}
             disabled={product.quantity - 1 === 0}
           >
-            Decrease
+            <span className="hidden">Decrease</span>
           </button>
           <label>
             <span className="hidden">Quantity:</span>
@@ -38,11 +38,11 @@ const Cart  = ({ products, total, onCheckoutClicked, closeModal, addToCart, subt
             />
           </label>
           <button
-            className="button"
+            className="button secondary right"
             onClick={() => addToCart(product.id)}
             disabled={product.inventory === 0}
           >
-            Increase
+            <span className="hidden">Increase</span>
           </button>
         </div>
       </div>
@@ -62,15 +62,20 @@ const Cart  = ({ products, total, onCheckoutClicked, closeModal, addToCart, subt
       <h3>Your Cart</h3>
       <div className="cart-wrapper">
         <div className="cart-products">{nodes}</div>
-        {hasProducts && (
-          <p>Total: &#36;{total}</p>
-        )}
-        {hasProducts && (
-          <button className="button" onClick={onCheckoutClicked}
+        <div className="cart-checkout">
+          {hasProducts && (
+            <div className="cart-total">
+              <span>Total:</span>
+              <span className="price">${total}</span>
+            </div>
+            )}
+          {hasProducts && (
+            <button className="button checkout" onClick={onCheckoutClicked}
             disabled={hasProducts ? '' : 'disabled'}>
-            Checkout
-          </button>
-        )}
+              Checkout
+            </button>
+          )}
+        </div>
       </div>
     </div>
   )
