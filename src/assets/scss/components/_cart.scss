@@ -96,6 +96,9 @@
             @include breakpoint(small) {
                 font-size: 21px;
             }
+            .text{
+                color: $color-silver-chalice;
+            }
         }
         button.checkout{
             margin-top: 108px;

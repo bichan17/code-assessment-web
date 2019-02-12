@@ -65,7 +65,7 @@ const Cart  = ({ products, total, onCheckoutClicked, closeModal, addToCart, subt
         <div className="cart-checkout">
           {hasProducts && (
             <div className="cart-total">
-              <span>Total:</span>
+              <span className="text">Total:</span>
               <span className="price">${total}</span>
             </div>
             )}
