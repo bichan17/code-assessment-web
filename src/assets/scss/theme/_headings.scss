@@ -17,3 +17,10 @@ h2{
         font-size: 38px;
     }
 }
+h3{
+    font-size: 28px;
+    line-height: 32px;
+    @include breakpoint(small) {
+        font-size: 38px;
+    }
+}

@@ -13,6 +13,7 @@ const CartContainer = ({ products, total, checkout, modalIsOpen, openModal, clos
     <Modal
       isOpen={modalIsOpen}
       className="Modal"
+      overlayClassName="Overlay"
     >
       <Cart
         closeModal={closeModal}

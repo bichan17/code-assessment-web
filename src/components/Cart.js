@@ -14,19 +14,30 @@ const Cart  = ({ products, total, onCheckoutClicked, closeModal }) => {
       />
     )
   ) : (
-    <em>Please add some products to cart.</em>
+    <div className="no-products">
+      <img className="empty-cart-icon" src="./assets/img/cart-icon-gray.svg" alt="cart-icon" />
+      <span>Please add some products<br />to your cart.</span>
+    </div>
   )
 
   return (
-    <div className="component-cart">
-      <div className="close-modal" onClick={closeModal}>X</div>
+    <div className="component-cart site-container--gutters">
+      <div className="close-modal" onClick={closeModal}>
+        <span className="hidden">Close Cart</span>
+      </div>
       <h3>Your Cart</h3>
-      <div>{nodes}</div>
-      <p>Total: &#36;{total}</p>
-      <button className="button" onClick={onCheckoutClicked}
-        disabled={hasProducts ? '' : 'disabled'}>
-        Checkout
-      </button>
+      <div className="cart-wrapper">
+        <div className="cart-products">{nodes}</div>
+        {hasProducts && (
+          <p>Total: &#36;{total}</p>
+        )}
+        {hasProducts && (
+          <button className="button" onClick={onCheckoutClicked}
+            disabled={hasProducts ? '' : 'disabled'}>
+            Checkout
+          </button>
+        )}
+      </div>
     </div>
   )
 }

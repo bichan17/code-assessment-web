@@ -1,0 +1,54 @@
+.Modal{
+    >div{
+        margin: 0 auto;
+        border-radius: 14px;
+    }
+    .close-modal {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 30px;
+        right: 28px;
+        z-index: 1;
+        cursor: pointer;
+
+        &:hover {
+            &:before,
+            &:after {
+                background-color: $color-black;
+            }
+        }
+
+        &:before,
+        &:after {
+            content: '';
+            width: 100%;
+            height: 1px;
+            background-color: $color-silver;
+            position: absolute;
+            left: 0;
+            top: 15px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        &:after {
+            transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+        }
+    }
+}
+
+.Overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: $color-iron;
+    @include breakpoint(small) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

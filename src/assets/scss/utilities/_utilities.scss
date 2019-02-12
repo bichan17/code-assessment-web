@@ -3,3 +3,7 @@
 @import "variables/colors";
 @import "variables/typography";
 @import "mixins/breakpoint";
+
+.hidden{
+    display: none;
+}
