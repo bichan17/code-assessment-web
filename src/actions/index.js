@@ -38,3 +38,15 @@ export const checkout = products => (dispatch, getState) => {
     // dispatch({ type: types.CHECKOUT_FAILURE, cart })
   })
 }
+
+export const openModal = () => dispatch =>{
+  dispatch({
+    type: types.OPEN_MODAL
+  })
+}
+
+export const closeModal = () => dispatch => {
+  dispatch({
+    type: types.CLOSE_MODAL
+  })
+}
