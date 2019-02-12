@@ -8,3 +8,12 @@ h1{
         font-size: 51px;
     }
 }
+h2{
+    font-size: 21px;
+    @include breakpoint(small) {
+        font-size: 28px;
+    }
+    @include breakpoint(medium) {
+        font-size: 38px;
+    }
+}

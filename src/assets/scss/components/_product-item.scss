@@ -1,0 +1,39 @@
+.component-product-item{
+    background-color: $color-white;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    @include breakpoint(small) {
+        display: flex;
+    }
+
+    .product-item-image-wrapper{
+        @include breakpoint(small) {
+            max-width: 40.71%;
+            max-height: 282px;
+        }
+    }
+
+    img{
+        max-width: 100%;
+        @include breakpoint(small) {
+            object-fit: cover;
+        }
+    }
+    .product-item-info{
+        padding: 24px;
+        width: 100%;
+        @include breakpoint(small) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 30px 38px;
+        }
+        @include breakpoint(medium) {
+            padding: 40px 55px;
+        }
+    }
+}

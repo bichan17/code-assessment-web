@@ -1,0 +1,23 @@
+.component-product{
+    margin-bottom: 26px;
+    .product-description{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        @include breakpoint(medium) {
+            margin-bottom: 27px;
+        }
+    }
+    .product-price{
+        font-size: 16px;
+        @include breakpoint(small) {
+            font-size: 21px;
+        }
+    }
+    .product-inventory{
+        text-transform: uppercase;
+        color: $color-gray;
+        font-size: 12px;
+    }
+}
